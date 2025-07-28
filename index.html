@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Personal Open Source Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <nav class="navbar fixed w-full top-0 z-50">
+        <div class="navbar-content max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Left Side -->
+                <div class="flex items-center space-x-8">
+                    <!-- Logo -->
+                     <a href="#">
+                         <div class="logo cursor-pointer" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));">
+                             <i class="fas fa-code mr-2"></i>
+                             CodeCraft
+                            </div>
+                        </a>
+
+                    <!-- Explore Button -->
+                    <div class="relative explore-container">
+                        <button class="explore-btn" id="exploreBtn">
+                            Explore
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown" id="exploreDropdown">
+                            <div class="dropdown-item" data-category="languages">
+                                Languages
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <a href="languages/html.html" class="subdropdown-item"><i class="fab fa-html5 text-red-500 px-2"></i>HTML</a>
+                                    <a href="languages/css.html" class="subdropdown-item"><i class="fab fa-css3 text-blue-500 px-2"></i>CSS</a>
+                                    <a href="languages/java.html" class="subdropdown-item"><i class="fab fa-js text-yellow-500 px-2"></i>Java</a>
+                                    <a href="languages/python.html" class="subdropdown-item"><i class="fab fa-python px-2" style="color: #3776AB;"></i>Python</a>
+                                    <a href="languages/c.html" class="subdropdown-item"><i class="fab fa-c px-2"></i>C</a>
+                                    <a href="languages/cpp.html" class="subdropdown-item"><i class="px-2 font-bold">C++</i>C++</a>
+                                    <a href="languages/react-native.html" class="subdropdown-item"><i class="fab fa-react text-blue-700 px-2"></i>React-Native</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-category="projects">
+                                 My Projects
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <a href="projects/project1.html" class="subdropdown-item">Project 1</a>
+                                    <a href="projects/project2.html" class="subdropdown-item">Project 2</a>
+                                    <a href="projects/project3.html" class="subdropdown-item">Project 3</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-category="templatres">
+                                Templates
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <a href="templates/login.html" class="subdropdown-item">Project 1</a>
+                                    <a href="projects/project2.html" class="subdropdown-item">Project 2</a>
+                                    <a href="projects/project3.html" class="subdropdown-item">Project 3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Search -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search projects, languages..."
+                        id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content (Blank as requested) -->
+    <!-- ...existing code... -->
+    <main class="main-content ">
+        <div class="welcome-text flex flex-col text-center align-center justify-center">
+            <h1 class="text-6xl font-bold text-center mt-10" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Welcome to CodeCraft</h1>
+            <p class="text-center mt-4 text-gray-500 mx-6">A growing collection of code snippets across multiple programming languages, ready to use templates, and real world projects to help you learn faster and build smarter...</p>
+        </div>
+
+        <!-- Language Image Slider -->
+            <h2 class="text-3xl font-semibold text-gray-800 px-6 my-6" style="background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Languages:</h2>
+        <div class="slider-container w-full flex justify-center mt-20">
+            <div id="languageSlider" class="relative w-32 h-32 overflow-hidden flex items-center justify-center">
+                <img id="currentLangImg" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Language" class="w-32 h-32 object-contain mx-auto transition-all duration-700" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));" />
+            </div>
+        </div>
+        <!-- End Language Image Slider -->
+
+    </main>
+<!-- ...existing code... -->
+<script src="script.js"></script>
+<!-- ...existing code... -->
+</body>
+
+</html>
+<!-- <div class="flex flex-col justify-center px-10">
+    <div class="self-start w-64 h-40 bg-gray-200 rounded-lg shadow-md flex items-center justify-center">
+        <span class="text-gray-500">Featured Project</span>
+     </div>
+     <div class="self-end w-64 h-40 bg-gray-200 rounded-lg shadow-md flex items-center justify-center">
+        <span class="text-gray-500">Recent Project</span>
+     </div>
+     <div class="self-start w-64 h-40 bg-gray-200 rounded-lg shadow-md flex items-center justify-center">
+        <span class="text-gray-500">Recent Project</span>
+     </div>
+     <div class="self-end w-64 h-40 bg-gray-200 rounded-lg shadow-md flex items-center justify-center">
+        <span class="text-gray-500">Recent Project</span>
+     </div>
+</div> -->

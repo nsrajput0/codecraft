@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Personal Open Source Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <nav class="navbar fixed w-full top-0 z-50">
+        <div class="navbar-content max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Left Side -->
+                <div class="flex items-center space-x-8">
+                    <!-- Logo -->
+                     <a href="/index.html">
+                         <div class="logo cursor-pointer" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));">
+                             <i class="fas fa-code mr-2"></i>
+                             CodeCraft
+                            </div>
+                        </a>
+
+                    <!-- Explore Button -->
+                    <div class="relative explore-container">
+                        <button class="explore-btn" id="exploreBtn">
+                            Explore
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown" id="exploreDropdown">
+                            <div class="dropdown-item" data-category="languages">
+                                Languages
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <a href="languages/html.html" class="subdropdown-item"><i class="fab fa-html5 text-red-500 px-2"></i>HTML</a>
+                                    <a href="languages/css.html" class="subdropdown-item"><i class="fab fa-css3 text-blue-500 px-2"></i>CSS</a>
+                                    <a href="languages/java.html" class="subdropdown-item"><i class="fab fa-js text-yellow-500 px-2"></i>Java</a>
+                                    <a href="languages/python.html" class="subdropdown-item"><i class="fab fa-python px-2" style="color: #3776AB;"></i>Python</a>
+                                    <a href="languages/c.html" class="subdropdown-item"><i class="fab fa-c px-2"></i>C</a>
+                                    <a href="languages/cpp.html" class="subdropdown-item"><i class="px-2 font-bold">C++</i>C++</a>
+                                    <a href="languages/react-native.html" class="subdropdown-item"><i class="fab fa-react text-blue-700 px-2"></i>React-Native</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-category="projects">
+                                 My Projects
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <a href="projects/project1.html" class="subdropdown-item">Project 1</a>
+                                    <a href="projects/project2.html" class="subdropdown-item">Project 2</a>
+                                    <a href="projects/project3.html" class="subdropdown-item">Project 3</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-category="templatres">
+                                Templates
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <!-- <a href="projects/project1.html" class="subdropdown-item">Project 1</a> -->
+                                    <a href="projects/project2.html" class="subdropdown-item">Project 2</a>
+                                    <a href="projects/project3.html" class="subdropdown-item">Project 3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Search -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search projects, languages..."
+                        id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content (Blank as requested) -->
+    <!-- ...existing code... -->
+    <main class="main-content ">
+        <div class="welcome-text flex flex-col text-center align-center justify-center">
+            <h1 class="text-6xl font-bold text-center mt-4" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); color: #667eea;">Login Form</h1>
+        </div>
+        <div class="coading-section">
+            <div style="border: 1px solid rgb(48, 48, 48);" class="codes rounded-lg bg-gray-900 shadow-md h-screen m-4 ">
+                <div class="btns flex">
+                    <button class="btn btn-primary px-2 bg-gray-100 hover:bg-gray-200" style="border-right: 1px solid;" id="htmlBtn">Html</button>
+                    <button class="btn btn-primary px-2 bg-gray-100 hover:bg-gray-200" style="border-right: 1px solid;" id="cssBtn">css</button>
+                    <button class="btn btn-primary px-2 bg-gray-100 hover:bg-gray-200" style="border-right: 1px solid;" id="jsBtn">js</button>
+                </div>
+                <div id="codeOutput" class="p-4 mt-4 rounded bg-gray-800 text-gray-100 font-mono text-sm overflow-auto" style="min-height: 200px;">
+                    <!-- Code will appear here -->
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <!-- ...existing code... -->
+    <script src="/script.js"></script>
+    <script>
+    // HTML template to show
+    const htmlTemplate = `
+&lt;div class="login login-card"&gt;<br>
+  &lt;h1&gt;Login&lt;/h1&gt;<br>
+    &lt;input class="login login-input" type="email" placeholder="Enter your email"&gt;<br>
+    &lt;input class="login login-input" type="password" placeholder="Enter your password"&gt;<br>
+  &lt;button class="login login-btn" type="submit"&gt;Login&lt;/button&gt;<br>
+&lt;/div&gt;
+    `;
+    const cssTemplate = `
+        .login{<br>
+            background: #e0e5ec;<br>
+            border-radius: 20px;<br>
+            box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #ffffff;<br>
+        }<br><br>
+        .login-input{<br>
+            background: #e0e5ec;<br>
+            border-radius: 20px;<br>
+            box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #ffffff;<br>
+        }<br><br>
+        .login-card{<br>
+            display: flex;<br>
+            flex-direction: column;<br>
+            justify-content: center;<br>
+            align-item: center;<br>
+            padding: 30px
+        }
+    `;
+    const jsTemplate = `
+        // JavaScript code for login functionality<br>
+        document.querySelector('.login-btn').addEventListener('click', function() {<br>
+            const email = document.querySelector('.login-input[type="email"]').value;<br>
+            const password = document.querySelector('.login-input[type="password"]').value;<br>
+            if(email && password) {<br>
+                alert('Login successful!');<br>
+            } else {<br>
+                alert('Please enter both email and password.');<br>
+            }<br>
+        });
+    `;
+
+    document.getElementById('htmlBtn').onclick = function() {
+        document.getElementById('codeOutput').innerHTML = htmlTemplate;
+    };
+    document.getElementById('cssBtn').onclick = function() {
+        document.getElementById('codeOutput').innerHTML = cssTemplate;
+    };
+    document.getElementById('jsBtn').onclick = function() {
+        document.getElementById('codeOutput').innerHTML = jsTemplate;
+    };
+</script>
+    <!-- ...existing code... -->
+</body>
+</html>

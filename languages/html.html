@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Personal Open Source Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">   
+</head>
+
+<body>
+    <nav class="navbar fixed w-full top-0 z-50">
+        <div class="navbar-content max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Left Side -->
+                <div class="flex items-center space-x-8">
+                    <!-- Logo -->
+                     <a href="/index.html">
+                         <div class="logo cursor-pointer">
+                             <i class="fas fa-code mr-2"></i>
+                             CodeCraft
+                            </div>
+                        </a>
+
+                    <!-- Explore Button -->
+                    <div class="relative explore-container">
+                        <button class="explore-btn" id="exploreBtn">
+                            Explore
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown" id="exploreDropdown">
+                            <div class="dropdown-item" data-category="languages">
+                                Languages
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <!-- <a href="languages/html.html" class="subdropdown-item"><i class="fab fa-html5 text-red-500 px-2"></i>HTML</a> -->
+                                    <a href="css.html" class="subdropdown-item"><i class="fab fa-css3 text-blue-500 px-2"></i>CSS</a>
+                                    <a href="java.html" class="subdropdown-item"><i class="fab fa-js text-yellow-500 px-2"></i>Java</a>
+                                    <a href="python.html" class="subdropdown-item"><i class="fab fa-python px-2" style="color: #3776AB;"></i>Python</a>
+                                    <a href="c.html" class="subdropdown-item"><i class="fab fa-c px-2"></i>C</a>
+                                    <a href="cpp.html" class="subdropdown-item"><i class="px-2 font-bold">C++</i>C++</a>
+                                    <a href="react-native.html" class="subdropdown-item"><i class="fab fa-react text-blue-700 px-2"></i>React-Native</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-item" data-category="projects">
+                                My Projects
+                                <i class="fas fa-chevron-right"></i>
+                                <div class="subdropdown">
+                                    <a href="projects/project1.html" class="subdropdown-item">Project 1</a>
+                                    <a href="projects/project2.html" class="subdropdown-item">Project 2</a>
+                                    <a href="projects/project3.html" class="subdropdown-item">Project 3</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Search -->
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search projects, languages..."
+                        id="searchInput">
+                    <i class="fas fa-search search-icon"></i>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content (Blank as requested) -->
+    <main class="main-content">
+        <div class="welcome-text flex flex-col text-center align-center justify-center">
+            <h1 class="text-6xl font-bold text-center mt-10" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">HTML</h1>
+        </div>
+        <div class="code-cont"></div>
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+</html>
