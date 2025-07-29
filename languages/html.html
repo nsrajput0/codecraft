@@ -90,22 +90,41 @@
             </div>
         </div>
     </nav>
+    <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300">
+        <div class="flex flex-col h-full mt-20">
+            <button id="closeSidebar" class="self-end m-4 text-white text-2xl">&times;</button>
+            <div class="flex flex-col space-y-4 px-6">
+                <h1 class="text-6xl font-bold text-center"
+            style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                HTML</h1>
+                <button id="showExample" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">HTML Template</button>
+                <button id="showTags" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">Simple HTML Tags</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content (Blank as requested) -->
     <main class="main-content">
-        <div class="welcome-text flex flex-col text-center align-center justify-center" style="height: 500px;">
+        <!-- hamburger-->
+        <div class="hamburger-menu">
+            <button class="hamburger-btn p-2" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>      
+        <div id="welSection" class="welcome-text flex flex-col text-center align-center justify-center" style="height: 500px;">
             <h1 class="text-6xl font-bold text-center mt-10"
-                style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 HTML</h1>
             <p class="text-sm m-4 text-gray-600 ">HTML (HyperText Markup Language) is the standard markup language for
                 creating web pages. It describes the structure of a web page using elements represented by tags. HTML
                 elements are the building blocks of HTML pages. They are represented by tags, which are enclosed in
                 angle brackets.</p>
         </div>
-        <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
-            <h2 class="text-2xl font-semibold mb-4">HTML Code Example</h2>
-            <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto">
-                <code class="language-html">
+            <div id="exampleSection" style="display: none;">
+            <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                <h2 class="text-2xl font-semibold mb-4">HTML Code Example</h2>
+                <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto">
+                    <code class="language-html">
     &lt;!DOCTYPE html&gt;
     &lt;html lang="en"&gt;
     &lt;head&gt;
@@ -118,12 +137,12 @@
     &lt;/body&gt;
     &lt;/html&gt;
 
-                </code>
-            </pre>
+                    </code>
+                </pre>
+            </div>  
         </div>
         <!-- ...existing code... -->
-        <div class="tags flex flex-col m-4 bg-gray-300 overflow-y-auto rounded-lg p-4 m-4"
-            style="height: 500px; box-shadow: 0 2px 4px rgb(0, 0, 0);">
+        <div id="tagsSection" class="tags flex flex-col m-4 rounded-lg p-4 m-4" style="display: none;">
             <h1 class="text-2xl font-semibold mb-4">HTML Common Tags</h1>
             <!-- Search Bar -->
             <input type="text" id="tagSearch" placeholder="Search for a tag..."
@@ -460,12 +479,38 @@
                     </pre>
                 </div>
             </div>
+            </div>
         </div>
     </main>
     <!-- ...existing code... -->
     <script src="../script.js"></script>
     <script>
         // Tag search functionality
+        
+
+        const sidebar = document.getElementById('sidebar');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeSidebar = document.getElementById('closeSidebar');
+        hamburgerBtn.onclick = () => sidebar.classList.remove('-translate-x-full');
+        closeSidebar.onclick = () => sidebar.classList.add('-translate-x-full');
+
+        // Section toggling
+        const exampleSection = document.getElementById('exampleSection');
+        const tagsSection = document.getElementById('tagsSection');
+        const welSection = document.getElementById('welSection');
+
+        document.getElementById('showExample').onclick = () => {
+            exampleSection.style.display = '';
+            tagsSection.style.display = 'none';
+            welSection.style.display = 'none';
+            sidebar.classList.add('-translate-x-full');
+        };
+        document.getElementById('showTags').onclick = () => {
+            exampleSection.style.display = 'none';
+             welSection.style.display = 'none';
+            tagsSection.style.display = '';
+            sidebar.classList.add('-translate-x-full');
+        };
         document.getElementById('tagSearch').addEventListener('input', function () {
             const search = this.value.toLowerCase();
             const tagItems = document.querySelectorAll('#tagsList .code-cont');
