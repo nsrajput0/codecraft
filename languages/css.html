@@ -78,14 +78,138 @@
             </div>
         </div>
     </nav>
+    <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300">
+        <div class="flex flex-col h-full mt-20">
+            <button id="closeSidebar" class="self-end m-4 text-white text-2xl">&times;</button>
+            <div class="flex flex-col space-y-4 px-6">
+                <h1 class="text-6xl font-bold text-center"
+            style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                CSS</h1>
+                <button id="showExample" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">Tailwind CSS properties</button>
+                <button id="showTags" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">CSS Properties</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content (Blank as requested) -->
     <main class="main-content">
-        <div class="welcome-text flex flex-col text-center align-center justify-center">
-            <h1 class="text-6xl font-bold text-center mt-10" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">CSS</h1>
+        <!-- hamburger-->
+        <div class="hamburger-menu bg-gray-200">
+            <button class="hamburger-btn p-2" id="hamburgerBtn">
+                <i class="fas fa-bars"></i>
+            </button> 
+        </div>      
+        <div id="welSection" class="welcome-text flex flex-col text-center align-center justify-center" style="height: 500px;">
+            <h1 class="text-6xl font-bold text-center mt-10"
+            style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                CSS</h1>
+            <p class="text-sm m-4 text-gray-600 ">CSS (Cascading Style Sheets) is a stylesheet language used for
+                describing the presentation of a document written in HTML or XML. CSS controls the layout of multiple web pages all at once.</p>
+            <p class="text-sm m-4 text-gray-600">CSS is designed to enable the separation of presentation and content,
+                elements are the building blocks of HTML pages. They are represented by tags, which are enclosed in
+                angle brackets.</p>
+        </div>
+        <!-- Code Example Section -->
+        <div id="exampleSection" class="tags flex flex-col m-4 rounded-lg p-4 m-4" style="display: none;">
+            <h1 class="text-2xl font-semibold mb-4">Tailwind CSS Properties</h1>
+            <!-- Search Bar -->
+            <input type="text" id="tailwindSearch" placeholder="Search for a tailwind css properties..."
+                class="mb-4 px-3 py-2 rounded border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <div id="tail-code-List">
+                <!-- <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Anchor Tag</h2>
+                    <p class="m-4 text-gray-600">Anchor tag is used to create hyperlinks in a web page. It can link to
+                        another page or a specific section within the same page.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-html">
+     &lt;a href="yourlink"&gt;Click to toggle link&lt;/a&gt;</code>
+                    </pre>
+                </div> -->
+                <!-- <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Nitesh Tag</h2>
+                    <p class="m-4 text-gray-600">Anchor tag is used to create hyperlinks in a web page. It can link to
+                        another page or a specific section within the same page.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-html">
+     &lt;a href="yourlink"&gt;Click to toggle link&lt;/a&gt;</code>
+                    </pre>
+                </div> -->
+                
+            </div>
+        </div>
+        <!-- ...existing code... -->
+        <div id="tagsSection" class="tags flex flex-col m-4 rounded-lg p-4 m-4" style="display: none;">
+            <h1 class="text-2xl font-semibold mb-4">CSS Common Properties</h1>
+            <!-- Search Bar -->
+            <input type="text" id="tagSearch" placeholder="Search for a css property..."
+                class="mb-4 px-3 py-2 rounded border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+            <div id="tagsList">
+                <!-- <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Anchor Tag</h2>
+                    <p class="m-4 text-gray-600">Anchor tag is used to create hyperlinks in a web page. It can link to
+                        another page or a specific section within the same page.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-html">
+     &lt;a href="yourlink"&gt;Click to toggle link&lt;/a&gt;</code>
+                    </pre>
+                </div> -->
+                
+            </div>
         </div>
     </main>
 
     <script src="../script.js"></script>
+    <script>
+        // Tag search functionality
+        
+
+        const sidebar = document.getElementById('sidebar');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const closeSidebar = document.getElementById('closeSidebar');
+        hamburgerBtn.onclick = () => sidebar.classList.remove('-translate-x-full');
+        closeSidebar.onclick = () => sidebar.classList.add('-translate-x-full');
+
+        // Section toggling
+        const exampleSection = document.getElementById('exampleSection');
+        const tagsSection = document.getElementById('tagsSection');
+        const welSection = document.getElementById('welSection');
+
+        document.getElementById('showExample').onclick = () => {
+            exampleSection.style.display = '';
+            tagsSection.style.display = 'none';
+            welSection.style.display = 'none';
+            sidebar.classList.add('-translate-x-full');
+        };
+        document.getElementById('showTags').onclick = () => {
+            exampleSection.style.display = 'none';
+             welSection.style.display = 'none';
+            tagsSection.style.display = '';
+            sidebar.classList.add('-translate-x-full');
+        };
+        document.getElementById('tagSearch').addEventListener('input', function () {
+            const search = this.value.toLowerCase();
+            const tagItems = document.querySelectorAll('#tagsList .code-cont');
+            tagItems.forEach(item => {
+                const tagTitle = item.querySelector('h2').textContent.toLowerCase();
+                if (tagTitle.includes(search)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+        document.getElementById('tailwindSearch').addEventListener('input', function () {
+            const search = this.value.toLowerCase();
+            const tagItems = document.querySelectorAll('#tail-code-List .tail-code-cont');
+            tagItems.forEach(item => {
+                const tagTitle = item.querySelector('h2').textContent.toLowerCase();
+                if (tagTitle.includes(search)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
