@@ -7,7 +7,22 @@
     <title>Fixed Personal Open Source Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../styles.css">   
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .code-cont, .tail-code-cont{
+            border: none !important;
+            box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.1);
+        }
+        .code-cont:hover, .tail-code-cont:hover {
+            box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        #tailwindSearch, #tagSearch{
+            box-shadow: 0 2px 4px 2px rgba(153, 0, 255, 0.205);
+            transition: box-shadow 0.3s ease-in-out;
+            border: none !important; 
+        }
+    </style>
 </head>
 
 <body>
@@ -18,11 +33,11 @@
                 <div class="flex items-center space-x-8">
                     <!-- Logo -->
                     <a href="../index.html">
-                         <div class="logo cursor-pointer" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));">
-                             <i class="fas fa-code mr-2"></i>
-                             CodeCraft
-                            </div>
-                        </a>
+                        <div class="logo cursor-pointer" style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));">
+                            <i class="fas fa-code mr-2"></i>
+                            CodeCraft
+                        </div>
+                    </a>
 
                     <!-- Explore Button -->
                     <div class="relative explore-container">
@@ -37,13 +52,17 @@
                                 Languages
                                 <i class="fas fa-chevron-right"></i>
                                 <div class="subdropdown">
-                                    <a href="html.html" class="subdropdown-item"><i class="fab fa-html5 text-red-500 px-2"></i>HTML</a>
+                                    <a href="html.html" class="subdropdown-item"><i
+                                            class="fab fa-html5 text-red-500 px-2"></i>HTML</a>
                                     <!-- <a href="languages/css.html" class="subdropdown-item"><i class="fab fa-css3 text-blue-500 px-2"></i>CSS</a> -->
-                                    <a href="java.html" class="subdropdown-item"><i class="fab fa-js text-yellow-500 px-2"></i>Java</a>
-                                    <a href="python.html" class="subdropdown-item"><i class="fab fa-python px-2" style="color: #3776AB;"></i>Python</a>
+                                    <a href="java.html" class="subdropdown-item"><i
+                                            class="fab fa-js text-yellow-500 px-2"></i>Java</a>
+                                    <a href="python.html" class="subdropdown-item"><i class="fab fa-python px-2"
+                                            style="color: #3776AB;"></i>Python</a>
                                     <a href="c.html" class="subdropdown-item"><i class="fab fa-c px-2"></i>C</a>
                                     <a href="cpp.html" class="subdropdown-item"><i class="px-2 font-bold">C++</i>C++</a>
-                                    <a href="react-native.html" class="subdropdown-item"><i class="fab fa-react text-blue-700 px-2"></i>React-Native</a>
+                                    <a href="react-native.html" class="subdropdown-item"><i
+                                            class="fab fa-react text-blue-700 px-2"></i>React-Native</a>
                                 </div>
                             </div>
                             <div class="dropdown-item" data-category="projects">
@@ -78,15 +97,18 @@
             </div>
         </div>
     </nav>
-    <div id="sidebar" class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300">
+    <div id="sidebar"
+        class="fixed top-0 left-0 h-full w-64 bg-gray-900 text-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300">
         <div class="flex flex-col h-full mt-20">
             <button id="closeSidebar" class="self-end m-4 text-white text-2xl">&times;</button>
             <div class="flex flex-col space-y-4 px-6">
                 <h1 class="text-6xl font-bold text-center"
-            style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                CSS</h1>
-                <button id="showExample" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">Tailwind CSS properties</button>
-                <button id="showTags" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">CSS Properties</button>
+                    style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    CSS</h1>
+                <button id="showExample" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">Tailwind CSS
+                    properties</button>
+                <button id="showTags" class="py-2 px-4 rounded bg-gray-800 hover:bg-gray-700 text-left">CSS
+                    Properties</button>
             </div>
         </div>
     </div>
@@ -97,14 +119,16 @@
         <div class="hamburger-menu bg-gray-200">
             <button class="hamburger-btn p-2" id="hamburgerBtn">
                 <i class="fas fa-bars"></i>
-            </button> 
-        </div>      
-        <div id="welSection" class="welcome-text flex flex-col text-center align-center justify-center" style="height: 500px;">
+            </button>
+        </div>
+        <div id="welSection" class="welcome-text flex flex-col text-center align-center justify-center"
+            style="height: 500px;">
             <h1 class="text-6xl font-bold text-center mt-10"
-            style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                style="filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); background: linear-gradient(45deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 CSS</h1>
             <p class="text-sm m-4 text-gray-600 ">CSS (Cascading Style Sheets) is a stylesheet language used for
-                describing the presentation of a document written in HTML or XML. CSS controls the layout of multiple web pages all at once.</p>
+                describing the presentation of a document written in HTML or XML. CSS controls the layout of multiple
+                web pages all at once.</p>
             <p class="text-sm m-4 text-gray-600">CSS is designed to enable the separation of presentation and content,
                 elements are the building blocks of HTML pages. They are represented by tags, which are enclosed in
                 angle brackets.</p>
@@ -116,44 +140,422 @@
             <input type="text" id="tailwindSearch" placeholder="Search for a tailwind css properties..."
                 class="mb-4 px-3 py-2 rounded border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400" />
             <div id="tail-code-List">
-                <!-- <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
-                    <h2 class="text-2xl font-semibold m-4">Anchor Tag</h2>
-                    <p class="m-4 text-gray-600">Anchor tag is used to create hyperlinks in a web page. It can link to
-                        another page or a specific section within the same page.</p>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">padding</h2>
+                    <p class="m-4 text-gray-600">The padding CSS property is a shorthand property for defining the space
+                        between the content of an element and its border. It can take one to four values, representing
+                        the padding for the top, right, bottom, and left sides of the element.</p>
                     <pre class="bg-gray-200 rounded-lg overflow-x-auto">
-                        <code class="language-html">
-     &lt;a href="yourlink"&gt;Click to toggle link&lt;/a&gt;</code>
+                        <code class="language-css">
+     p-0  #padding from all sides
+     p-4  #padding of 1rem (16px) on all sides
+     p-x-4  #padding of 1rem (16px) on left and right sides
+     p-y-4  #padding of 1rem (16px) on top and bottom sides </code>
                     </pre>
-                </div> -->
-                <!-- <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
-                    <h2 class="text-2xl font-semibold m-4">Nitesh Tag</h2>
-                    <p class="m-4 text-gray-600">Anchor tag is used to create hyperlinks in a web page. It can link to
-                        another page or a specific section within the same page.</p>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">margin</h2>
+                    <p class="m-4 text-gray-600">The margin CSS property is a shorthand property for defining the space
+                        outside an element's border. It can take one to four values, representing the margin for the
+                        top, right, bottom, and left sides of the element.</p>
                     <pre class="bg-gray-200 rounded-lg overflow-x-auto">
-                        <code class="language-html">
-     &lt;a href="yourlink"&gt;Click to toggle link&lt;/a&gt;</code>
+                        <code class="language-css">
+     m-0  #margin from all sides
+     m-4  #margin of 1rem (16px) on all sides
+     m-x-4  #margin of 1rem (16px) on left and right sides
+     m-y-4  #margin of 1rem (16px) on top and bottom sides
+            </code>
                     </pre>
-                </div> -->
-                
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">background-color</h2>
+                    <p class="m-4 text-gray-600">The background-color CSS property sets the background color of an
+                        element. It can take any valid CSS color value, including named colors, hex codes, RGB, RGBA,
+                        HSL, and HSLA values.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     bg-transparent  #make background transparent
+     bg-black  #set background to black
+     bg-white  #set background to white
+     bg-red-500  #set background to a shade of red
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">text-color</h2>
+                    <p class="m-4 text-gray-600">The text-color CSS property sets the color of the text content of an
+                        element. It can take any valid CSS color value, including named colors, hex codes, RGB, RGBA,
+                        HSL, and HSLA values.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     text-transparent  #make text transparent
+     text-black  #set text to black
+     text-white  #set text to white
+     text-red-500  #set text to a shade of red
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">border</h2>
+                    <p class="m-4 text-gray-600">The border CSS property is a shorthand property for setting the width,
+                        style, and color of an element's border. It can take one to three values, representing the
+                        width, style, and color of the border.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     border-0  #remove border
+     border-2  #set border width to 2px
+     border-dashed  #set border style to dashed
+     border-red-500  #set border color to a shade of red
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">flex</h2>
+                    <p class="m-4 text-gray-600">The flex CSS property is a shorthand property for setting the
+                        flex-grow, flex-shrink, and flex-basis properties of a flex item. It allows you to control how a
+                        flex item grows or shrinks within a flex container.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     flex-1  #allow flex item to grow and fill available space
+     flex-auto  #allow flex item to grow and shrink as needed
+     flex-initial  #set flex item to its initial size
+     flex-none  #prevent flex item from growing or shrinking
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">grid</h2>
+                    <p class="m-4 text-gray-600">The grid CSS property is a shorthand property for setting the
+                        grid-template-columns, grid-template-rows, and grid-template-areas properties of a grid
+                        container. It allows you to define the structure of a grid layout.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     grid-cols-1  #create a single column grid
+     grid-cols-2  #create a two-column grid
+     grid-cols-3  #create a three-column grid
+     grid-rows-2  #create a two-row grid
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">shadow</h2>
+                    <p class="m-4 text-gray-600">The shadow CSS property is a shorthand property for setting the
+                        box-shadow and text-shadow properties of an element. It allows you to add shadows to elements,
+                        enhancing their visual appearance.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     shadow-sm  #apply a small shadow
+     shadow-md  #apply a medium shadow
+     shadow-lg  #apply a large shadow
+     shadow-xl  #apply an extra-large shadow
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">rounded</h2>
+                    <p class="m-4 text-gray-600">The rounded CSS property is a shorthand property for setting the
+                        border-radius of an element. It allows you to create rounded corners on elements, enhancing
+                        their visual appearance.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     rounded-sm  #apply a small border radius
+     rounded-md  #apply a medium border radius
+     rounded-lg  #apply a large border radius
+     rounded-xl  #apply an extra-large border radius
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">transition</h2>
+                    <p class="m-4 text-gray-600">The transition CSS property is a shorthand property for setting the
+                        transition-property, transition-duration, transition-timing-function, and transition-delay
+                        properties of an element. It allows you to create smooth transitions between different states of
+                        an element.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     transition-all  #apply transition to all properties
+     transition-colors  #apply transition to color properties
+     transition-opacity  #apply transition to opacity
+     transition-transform  #apply transition to transform
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">opacity</h2>
+                    <p class="m-4 text-gray-600">The opacity CSS property sets the opacity level for an element, making
+                        it transparent or semi-transparent. It can take a value between 0 (completely transparent) and 1
+                        (completely opaque).</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     opacity-0  #completely transparent
+     opacity-25  #25% transparent
+     opacity-50  #50% transparent
+     opacity-75  #75% transparent
+     opacity-100  #completely opaque
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">display</h2>
+                    <p class="m-4 text-gray-600">The display CSS property sets the display behavior of an element. It
+                        can take values like block, inline, flex, grid, and more, determining how the element is
+                        rendered in the layout.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     block  #display as a block element
+     inline  #display as an inline element
+     flex  #display as a flex container
+     grid  #display as a grid container
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">overflow</h2>
+                    <p class="m-4 text-gray-600">The overflow CSS property controls what happens to content that is too
+                        large to fit in an area. It can take values like visible, hidden, scroll, and auto.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     overflow-visible  #content is not clipped and may be rendered outside the element's box
+     overflow-hidden  #content is clipped and not visible
+     overflow-scroll  #content is clipped but a scrollbar is added
+     overflow-auto  #browser decides whether to add a scrollbar
+            </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">position</h2>
+                    <p class="m-4 text-gray-600">The position CSS property sets how an element is positioned in the
+                        document. It can take values like static, relative, absolute, fixed, and sticky.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     position-static  #default positioning
+     position-relative  #position relative to its normal position
+     position-absolute  #position relative to the nearest positioned ancestor
+     position-fixed  #position relative to the viewport
+     position-sticky  #toggle between relative and fixed, depending on scroll position
+        </code>
+                    </pre>
+                </div>
+                <div class="tail-code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">z-index</h2>
+                    <p class="m-4 text-gray-600">The z-index CSS property sets the stack order of an element. Elements
+                        with a higher z-index are displayed in front of those with a lower z-index.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+        z-0  #default z-index
+        z-10  #z-index 10
+        z-20  #z-index 20
+        z-30  #z-index 30
+        z-40  #z-index 40
+        z-50  #z-index 50
+            </code>
+                    </pre>
+                </div>
+                <!-- Add your custom CSS properties here -->
             </div>
         </div>
-        <!-- ...existing code... -->
+        <!-- CSS common properties code -->
         <div id="tagsSection" class="tags flex flex-col m-4 rounded-lg p-4 m-4" style="display: none;">
             <h1 class="text-2xl font-semibold mb-4">CSS Common Properties</h1>
             <!-- Search Bar -->
             <input type="text" id="tagSearch" placeholder="Search for a css property..."
                 class="mb-4 px-3 py-2 rounded border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400" />
             <div id="tagsList">
-                <!-- <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
-                    <h2 class="text-2xl font-semibold m-4">Anchor Tag</h2>
-                    <p class="m-4 text-gray-600">Anchor tag is used to create hyperlinks in a web page. It can link to
-                        another page or a specific section within the same page.</p>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Padding</h2>
+                    <p class="m-4 text-gray-600">Padding is the space between the content of an element and its border.
+                    </p>
                     <pre class="bg-gray-200 rounded-lg overflow-x-auto">
-                        <code class="language-html">
-     &lt;a href="yourlink"&gt;Click to toggle link&lt;/a&gt;</code>
+                        <code class="language-css">
+     padding: 16px;
+     padding-top: 16px;
+     padding-right: 16px;
+     padding-bottom: 16px;
+     padding-left: 16px;
+                        </code>
                     </pre>
-                </div> -->
-                
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Margin</h2>
+                    <p class="m-4 text-gray-600">Margin is the space outside the border of an element.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     margin: 16px;
+     margin-top: 16px;
+     margin-right: 16px;
+     margin-bottom: 16px;
+     margin-left: 16px;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Background Color</h2>
+                    <p class="m-4 text-gray-600">Background color sets the background color of an element.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     background-color: #f0f0f0;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Text Color</h2>
+                    <p class="m-4 text-gray-600">Text color sets the color of the text content of an element.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     color: #333333;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Border</h2>
+                    <p class="m-4 text-gray-600">Border sets the width, style, and color of an element's border.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     border: 1px solid #333333;
+     border-top: 1px solid #333333;
+     border-right: 1px solid #333333;
+     border-bottom: 1px solid #333333;
+     border-left: 1px solid #333333;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Flex</h2>
+                    <p class="m-4 text-gray-600">Flex properties control the layout of flex items within a flex
+                        container.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     display: flex;
+     flex-direction: row;
+     flex-wrap: nowrap;
+     justify-content: flex-start;
+     align-items: stretch;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Grid</h2>
+                    <p class="m-4 text-gray-600">Grid properties control the layout of grid items within a grid
+                        container.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-gap: 16px;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Shadow</h2>
+                    <p class="m-4 text-gray-600">Shadow adds a shadow effect to an element.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+                            </code>
+                        </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Rounded</h2>
+                    <p class="m-4 text-gray-600">Rounded corners for elements.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                            <code class="language-css">
+     border-radius: 4px;
+                            </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Transition</h2>
+                    <p class="m-4 text-gray-600">Transition properties for smooth animations.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     transition: all 0.3s ease;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Transform</h2>
+                    <p class="m-4 text-gray-600">Transform properties for 2D/3D transformations.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     transform: translateX(100px) rotate(45deg);
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Opacity</h2>
+                    <p class="m-4 text-gray-600">Opacity sets the transparency level of an element.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     opacity: 0.5;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Display</h2>
+                    <p class="m-4 text-gray-600">Display properties control how an element is displayed in the layout.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     display: block;
+    display: inline;
+    display: flex;
+    display: grid;
+    display: contents;
+    display: none;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Overflow</h2>
+                    <p class="m-4 text-gray-600">Overflow properties control how content that overflows an element is
+                        handled.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     overflow: visible;
+    overflow: hidden;
+    overflow: scroll;
+    overflow: auto;
+    overflow: clip;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Position</h2>
+                    <p class="m-4 text-gray-600">Position properties control how an element is positioned in the layout.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     position: static;
+    position: relative;
+    position: absolute;
+    position: fixed;
+    position: sticky;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Z-Index</h2>
+                    <p class="m-4 text-gray-600">Z-index controls the stacking order of positioned elements.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     z-index: 1;
+    z-index: 2;
+    z-index: 3;
+    z-index: 4;
+    z-index: 5;
+                        </code>
+                    </pre>
+                </div>
+                <div class="code-cont border border-gray-300 rounded-lg p-4 m-4">
+                    <h2 class="text-2xl font-semibold m-4">Custom Properties</h2>
+                    <p class="m-4 text-gray-600">Custom properties (CSS variables) allow you to store values for reuse.</p>
+                    <pre class="bg-gray-200 rounded-lg overflow-x-auto">
+                        <code class="language-css">
+     --main-bg-color: #3490dc;
+    --main-text-color: #333;
+    --font-stack: 'Helvetica Neue', sans-serif;
+                        </code>
+                    </pre>
+                </div>
             </div>
         </div>
     </main>
@@ -161,7 +563,7 @@
     <script src="../script.js"></script>
     <script>
         // Tag search functionality
-        
+
 
         const sidebar = document.getElementById('sidebar');
         const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -182,7 +584,7 @@
         };
         document.getElementById('showTags').onclick = () => {
             exampleSection.style.display = 'none';
-             welSection.style.display = 'none';
+            welSection.style.display = 'none';
             tagsSection.style.display = '';
             sidebar.classList.add('-translate-x-full');
         };
@@ -212,4 +614,5 @@
         });
     </script>
 </body>
+
 </html>

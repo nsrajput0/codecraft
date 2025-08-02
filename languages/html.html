@@ -9,11 +9,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
     <style>
-        .code-cont {
-            box-shadow: 0 2px 4px rgb(0, 0, 0);
-            transition: box-shadow 0.3s ease;
-            border: none;
-            background-color: #f8f9fa;
+        .code-cont{
+            border: none !important;
+            box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.1);
+        }
+        .code-cont:hover, .tail-code-cont:hover {
+            box-shadow: 0 6px 12px 12px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+         #tagSearch{
+            box-shadow: 0 2px 4px 2px rgba(153, 0, 255, 0.205);
+            transition: box-shadow 0.3s ease-in-out;
+            border: none !important; 
         }
 
     </style>
