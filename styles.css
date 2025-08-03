@@ -359,6 +359,9 @@
             body{
                 overflow-x: hidden;
             }
+            .navbar{
+                padding: 0.8rem 0;
+            }
              .main-content {
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
@@ -382,9 +385,8 @@
             .search-input {
                 width: auto;
                 height: auto;
-                padding-top: 1px;
-                padding-bottom: 1px;
-                padding-right: 1;
+                padding-top: 4px;
+                padding-bottom: 4px;
                 min-width: 0;
             }
             .hamburger-menu {
@@ -426,7 +428,6 @@
                 padding: 2px;
             }
             .dropdown-item {
-                padding: ;
                 display: flex;
                 align-items: center;
                 justify-content: left;
