@@ -147,7 +147,7 @@
             transform: translateX(-10px);
             transition: all 0.3s ease;
             min-width: 180px;
-            z-index: 1001;
+            z-index: 10001;
         }
 
         .dropdown-item:hover .subdropdown {
@@ -363,25 +363,28 @@
                 padding-left: 0.5rem !important;
                 padding-right: 0.5rem !important;
             }
-            .logo{
-                display: none;
+            .logo i{
+                font-size: 16px;
             }
             .flex.items-center.justify-between {
                 align-items: stretch;
             }
             .flex.items-center.space-x-8 {
-                flex-direction: column;
                 gap: 0.5rem;
             }
             .search-container {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 100%;
-                margin: 0.5rem;
+                width: auto;
+                margin: 0.2rem;
             }
             .search-input {
-                width: 100%;
+                width: auto;
+                height: auto;
+                padding-top: 1px;
+                padding-bottom: 1px;
+                padding-right: 1;
                 min-width: 0;
             }
             .hamburger-menu {
@@ -416,5 +419,19 @@
             #tagSearch, #tailwindSearch {
                 width: 100%;
                 font-size: 1rem;
+            }
+            .explore-container button{
+                width: auto;
+                height: auto;
+                padding: 2px;
+            }
+            .dropdown-item {
+                padding: ;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+            }
+            .dropdown{
+                left: -100%;
             }
         }
